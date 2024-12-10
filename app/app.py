@@ -4,6 +4,9 @@ from pymongo.server_api import ServerApi
 import os
 from dotenv import load_dotenv
 from bson.objectid import ObjectId
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 # Load environment variables from .env file
 load_dotenv()

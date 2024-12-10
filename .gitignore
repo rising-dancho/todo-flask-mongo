@@ -27,3 +27,5 @@ Lib/site-packages/
 
 # Windows image file caches
 Thumbs.db
+
+.env

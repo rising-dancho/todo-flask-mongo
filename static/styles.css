@@ -76,3 +76,25 @@ button[type='submit']:hover {
 .todo i {
   color: #888;
 }
+
+/* FOOTER */
+footer {
+  margin-bottom: 48px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--gray-text);
+  text-align: center;
+}
+
+/* LVHA */
+footer a:link,
+footer a:visited {
+  text-decoration: none;
+  color: var(--gray-text);
+  transition: all 0.2s;
+}
+
+footer a:hover,
+footer a:active {
+  text-decoration: underline;
+}

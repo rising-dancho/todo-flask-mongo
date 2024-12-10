@@ -13,18 +13,22 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# MongoDB connection URI from environment variables
-uri = os.getenv("MONGO_URI")
+# # MongoDB connection URI from environment variables
+# uri = os.getenv("MONGO_URI")
+# print(f"Mongo URI: {os.getenv('MONGO_URI')}")
+
+uri = "mongodb+srv://josealejoperezjr:denden123@cluster0.uaaav.mongodb.net/flask_database?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi("1"))
 
-# Test connection
+# Send a ping to confirm a successful connection
 try:
     client.admin.command("ping")
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
-    print(f"Failed to connect to MongoDB: {e}")
+    print(e)
+
 
 # MongoDB database and collection
 db = client.flask_database  # Database name
@@ -53,4 +57,5 @@ def delete(id):  # delete function by targeting a todo document by its own id
 
 if __name__ == "__main__":
     from os import environ
+
     app.run(host="0.0.0.0", port=int(environ.get("PORT", 8080)))

@@ -14,10 +14,8 @@ load_dotenv()
 app = Flask(__name__)
 
 # # MongoDB connection URI from environment variables
-# uri = os.getenv("MONGO_URI")
+uri = os.getenv("MONGO_URI")
 # print(f"Mongo URI: {os.getenv('MONGO_URI')}")
-
-uri = "mongodb+srv://josealejoperezjr:denden123@cluster0.uaaav.mongodb.net/flask_database?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi("1"))
